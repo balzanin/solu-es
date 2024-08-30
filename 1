@@ -1,14 +1,26 @@
-#include <stdio.h>
+def pertence_a_fibonacci(num):
+    # Inicializando os dois primeiros números da sequência
+    a, b = 0, 1
 
-int main() {
-    int INDICE = 13, SOMA = 0, K = 0;
+    # Verifica se o número informado é 0 ou 1, que pertencem à sequência
+    if num == 0 or num == 1:
+        return True
+    
+    # Calcula a sequência de Fibonacci até alcançar ou ultrapassar o número informado
+    while b < num:
+        a, b = b, a + b
+    
+    # Verifica se o número é igual ao último valor calculado na sequência
+    if b == num:
+        return True
+    else:
+        return False
 
-    while (K < INDICE) {
-        K = K + 1;
-        SOMA = SOMA + K;
-    }
+# Entrada do usuário
+numero = int(input("Informe um número: "))
 
-    printf("O valor final de SOMA é: %d\n", SOMA);
-
-    return 0;
-}
+# Verificação e mensagem
+if pertence_a_fibonacci(numero):
+    print(f"O número {numero} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {numero} NÃO pertence à sequência de Fibonacci.")
