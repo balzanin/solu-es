@@ -1,0 +1,14 @@
+def contar_a(string):
+    # Contabiliza o número de ocorrências de 'a' (minúscula) e 'A' (maiúscula)
+    contagem_a = string.count('a') + string.count('A')
+    
+    if contagem_a > 0:
+        print(f"A letra 'a' aparece {contagem_a} vez(es) na string.")
+    else:
+        print("A letra 'a' não aparece na string.")
+
+# String previamente definida no código
+texto = "Aprender a programar é fascinante!"  # Você pode alterar o texto para testar diferentes strings
+
+# Chama a função com a string definida
+contar_a(texto)
