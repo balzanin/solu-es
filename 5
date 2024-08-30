@@ -1,0 +1,47 @@
+import time
+import random
+
+def simular_lampada():
+    # Randomicamente define se a lâmpada está quente ou fria
+    estado = random.choice(['acesa', 'apagada_quente', 'apagada_fria'])
+    return estado
+
+def controlar_interruptores():
+    # Inicializa o estado dos interruptores
+    interruptores = {
+        'interruptor1': False,  # Inicialmente desligado
+        'interruptor2': False,  # Inicialmente desligado
+        'interruptor3': False   # Inicialmente desligado
+    }
+    
+    # Etapa 1: Ligue o primeiro interruptor e deixe ligado por alguns minutos
+    print("Ligando o primeiro interruptor...")
+    interruptores['interruptor1'] = True
+    time.sleep(5)  # Simula o tempo em que o interruptor permanece ligado
+    
+    # Desligue o primeiro interruptor e ligue o segundo
+    print("Desligando o primeiro interruptor e ligando o segundo...")
+    interruptores['interruptor1'] = False
+    interruptores['interruptor2'] = True
+    
+    # O terceiro interruptor permanece desligado
+    interruptores['interruptor3'] = False
+    
+    return interruptores
+
+def verificar_lampadas(interruptores):
+    # Simula a verificação das lâmpadas
+    lampadas = {
+        'lampada1': simular_lampada(),
+        'lampada2': simular_lampada(),
+        'lampada3': simular_lampada()
+    }
+    
+    # Identificar o estado das lâmpadas
+    print("Verificando lâmpadas...")
+    for lampada, estado in lampadas.items():
+        print(f"{lampada}: {estado}")
+    
+    # Baseado na lógica:
+    # - Lâmpada acesa é controlada pelo segundo interruptor
+    # - Lâmp
